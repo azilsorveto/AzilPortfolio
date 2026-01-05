@@ -1,0 +1,109 @@
+.mfp-inline-holder .mfp-content {
+  padding: 0;
+}
+
+/* center the popup vertically and horizontally */
+.mfp-wrap .mfp-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px;
+}
+
+.mfp-mini-browser {
+  width: 92vw;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  position: relative;
+  margin: auto;
+}
+
+.mfp-browser-top {
+  background: #f5f5f5;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: inherit;
+  position: relative;
+}
+
+.mfp-url {
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100% - 44px);
+}
+
+/* simplified close button: reset any .btn inheritance then style */
+button.mfp-top-close {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.mfp-mini-browser .mfp-browser-iframe {
+  width: 100%;
+  height: 72vh;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mfp-mini-browser { width: 96vw; }
+  .mfp-mini-browser .mfp-browser-iframe {
+    height: 60vh;
+  }
+}
+
+/* loader overlay */
+.mfp-loader-overlay {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  flex-direction: column;
+}
+
+.mfp-loader-spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid rgba(0,0,0,0.12);
+  border-top-color: #29a587;
+  animation: mfp-spin 1s linear infinite;
+  margin-bottom: 8px;
+}
+
+.mfp-load-error {
+  color: #444;
+  font-size: 13px;
+  text-align: center;
+  padding: 6px 10px;
+}
+
+@keyframes mfp-spin {
+  to { transform: rotate(360deg); }
+}
